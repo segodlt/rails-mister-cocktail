@@ -11,8 +11,11 @@ class Cocktail < ApplicationRecord
     self.reviews.each do |review|
       total_rating += review.rating
     end
-
-    num_rating = self.reviews.length
-    (total_rating / num_rating).to_i
+    if total_rating != 0
+      num_rating = self.reviews.length
+      (total_rating / num_rating).to_i
+    else
+      return 0
+    end
   end
 end

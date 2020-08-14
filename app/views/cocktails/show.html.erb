@@ -4,18 +4,12 @@
     <h2><%= @cocktail.name %></h2>
     <% @cocktail.doses.each do |dose| %>
       <p><%= dose.description %> de : <%= dose.ingredient.name %> <%= link_to "🗑", dose_path(dose), method: :delete, data: { confirm: "Are you sure?"} %></p>
-      <div>
-        <%= link_to new_cocktail_dose_path(@cocktail.id) do %>
-          <i class="fas fa-cart-plus" ></i>
-        <% end %>
-
-      </div>
-
+    <% end %>
+    <%= link_to new_cocktail_dose_path(@cocktail.id) do %>
+      <i class="fas fa-cart-plus" ></i>
     <% end %>
   </div>
 </div>
-
-
 
 
 
