@@ -15,11 +15,11 @@
 
 
 
-<%= link_to new_cocktail_review_path(@cocktail.id) do %>
+<%= link_to cocktails_path do %>
   <i class="fas fa-chevron-circle-left"></i>
 <% end %>
 
-<%= link_to cocktails_path do %>
+<%= link_to new_cocktail_review_path(@cocktail.id) do %>
   <i class="fas fa-pen"></i>
 <% end %>
 
