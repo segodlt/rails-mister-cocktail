@@ -12,11 +12,10 @@
 
 <div class="container">
   <div class="row">
-
     <% @cocktails.each do |cocktail| %>
 
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo.key, crop: :scale %>');">
           <div class="card-description">
             <% if cocktail.average_rating > 0 %>
               <p><%= "★" * cocktail.average_rating %><%= "☆" * (5 - cocktail.average_rating) %></p>
