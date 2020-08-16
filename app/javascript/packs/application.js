@@ -17,3 +17,22 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import 'bootstrap';
+
+import { loadDynamicBannerText } from '../components/banner';
+
+document.addEventListener('turbolinks:load', () => {
+  loadDynamicBannerText();
+});
+
+import { initSweetalert } from '../components/alert';
+
+initSweetalert("#btn-trash", {
+  title: "Delete this ingredient",
+  text: "Are you sure?",
+  icon: "warning"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
